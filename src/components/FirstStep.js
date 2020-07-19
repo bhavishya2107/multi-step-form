@@ -4,7 +4,7 @@ import ReactFileReader from "react-file-reader";
 class FirstStep extends Component {
   continue = (e) => {
     e.preventDefault();
-    this.props.nextStep();
+    this.props.clearStateOnStart();
   };
 
   render() {

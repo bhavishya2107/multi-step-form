@@ -4,6 +4,7 @@ import PropertyDetails from "./PropertyDetails";
 import ImageUploadStep from "./ImageUploadStep";
 import Success from "./Success";
 import Stepper from "react-js-stepper";
+// import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 
 const steps = [
   { title: "Step - 1" },
@@ -32,6 +33,19 @@ class UserForm extends Component {
       : this.setState({
           imagePreview: src,
         });
+  };
+
+  //clear state
+  clearStateOnStart = () => {
+    this.setState({
+      step: 2,
+      address: "",
+      bedroom: "",
+      description: "",
+      bathroom: "",
+      images: [],
+      imagePreview: "",
+    });
   };
 
   //save images to state
@@ -111,7 +125,6 @@ class UserForm extends Component {
           }
         }
       });
-      console.log(this.state);
     };
     reader.readAsText(files[0]);
     this.nextStep();
@@ -137,6 +150,7 @@ class UserForm extends Component {
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             handleFiles={this.handleFiles}
+            clearStateOnStart={this.clearStateOnStart}
           />
         );
       case 2:

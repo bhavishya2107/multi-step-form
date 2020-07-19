@@ -13,6 +13,7 @@
     "react-dropzone": "^11.0.2",
     "react-file-reader": "^1.1.4",
     "react-js-stepper": "^1.2.6",
+    "react-places-autocomplete": "^7.3.0",
     "react-scripts": "3.4.1"
   },
   "scripts": {

@@ -1,6 +1,6 @@
 import React from "react";
 import Dropzone from "react-dropzone";
-import img from '../images/img.png'
+import img from "../images/img.png";
 
 const ImageUploadStep = (props) => {
   const {
@@ -15,20 +15,19 @@ const ImageUploadStep = (props) => {
     images &&
     images.map((file) => {
       return (
-        <div class="col-md-3">
-          <div class="card">
+        <div className="col-md-3" key={file.src}>
+          <div className="card">
             <img
               src={file.src}
               alt={file.path}
               style={{ width: "100%", height: "100px" }}
             />
-            <div class="caption">{file.name}</div>
+            <div className="caption">{file.name}</div>
           </div>
           <div className="text-center">
             <input
               type="checkbox"
-              className="text-center"
-              class="form-check-input"
+              className="form-check-input text-center"
               onChange={() => onToggleImagePreview(file.src)}
               checked={imagePreview === file.src ? true : false}
             />
@@ -65,17 +64,13 @@ const ImageUploadStep = (props) => {
       </Dropzone>
       {imagePreview !== "" ? (
         <div className="container mb-5">
-          <img src={imagePreview} class="img-fluid" alt={imagePreview} />
+          <img src={imagePreview} className="img-fluid" alt={imagePreview} />
         </div>
       ) : (
         <div className="container mb-5">
           <p className="font-weight-bold">Please add an image preview</p>
           <div className="text-center">
-            <img
-              src={img}
-              class="img-fluid"
-              alt="img"
-            />
+            <img src={img} className="img-fluid" alt="img" />
           </div>
         </div>
       )}
@@ -84,7 +79,7 @@ const ImageUploadStep = (props) => {
         <button
           type="button"
           onClick={prevStep}
-          class="btn btn-outline-secondary p-2"
+          className="btn btn-outline-secondary p-2"
           style={{ width: "40%" }}
         >
           Back
@@ -93,7 +88,7 @@ const ImageUploadStep = (props) => {
           <button
             type="button"
             onClick={nextStep}
-            class="btn btn-primary p-2 ml-2"
+            className="btn btn-primary p-2 ml-2"
             style={{ width: "40%" }}
           >
             Next
