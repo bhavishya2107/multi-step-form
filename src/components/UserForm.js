@@ -3,7 +3,13 @@ import FirstStep from "./FirstStep";
 import PropertyDetails from "./PropertyDetails";
 import ImageUploadStep from "./ImageUploadStep";
 import Success from "./Success";
+import Stepper from "react-js-stepper";
 
+const steps = [
+  { title: "Step - 1" },
+  { title: "Step - 2" },
+  { title: "Step - 3" },
+];
 class UserForm extends Component {
   state = {
     step: 1,
@@ -15,17 +21,16 @@ class UserForm extends Component {
     imagePreview: "",
   };
 
+  // ontoggle change imagePreview
   onToggleImagePreview = (src) => {
     const { imagePreview } = this.state;
-    {
-      imagePreview == src
-        ? this.setState({
-            imagePreview: "",
-          })
-        : this.setState({
-            imagePreview: src,
-          });
-    }
+    imagePreview === src
+      ? this.setState({
+          imagePreview: "",
+        })
+      : this.setState({
+          imagePreview: src,
+        });
   };
 
   //save images to state
@@ -158,6 +163,8 @@ class UserForm extends Component {
         );
       case 4:
         return <Success values={values} images={images} />;
+      default:
+        return null;
     }
   };
 
@@ -165,7 +172,12 @@ class UserForm extends Component {
     const { step } = this.state;
     return (
       <div className="container mt-2">
-        {step > 3 ? "" : <h2>Step {step} of 3</h2>}
+        <Stepper
+          steps={steps}
+          activeStep={step}
+          onSelect={this.handleOnClickStepper}
+          showNumber={false}
+        />
         {this.showStep()}
       </div>
     );

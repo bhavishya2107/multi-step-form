@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactFileReader from "react-file-reader";
 
-export class FirstStep extends Component {
+class FirstStep extends Component {
   continue = (e) => {
     e.preventDefault();
     this.props.nextStep();
@@ -11,18 +11,23 @@ export class FirstStep extends Component {
     const { handleFiles } = this.props;
     return (
       <div className="container jumbotron mt-5">
-        <div className="row m-5">
-          <button className="col-sm-5 btn btn-primary" onClick={this.continue}>
-            Add from scratch
-          </button>
-          <div className="col-sm-2"></div>
-          <ReactFileReader
-            handleFiles={handleFiles}
-            fileTypes={".csv"}
-            className="col-sm-5"
+        <div className="mt-5 text-center">
+          <button
+            type="button"
+            className="btn btn-outline-primary"
+            style={{ width: "40%" }}
+            onClick={this.continue}
           >
-            <button className="btn btn-info">Upload as CSV</button>
-          </ReactFileReader>
+            <span className="h6">Start from scratch</span>
+          </button>
+          <button
+            className="btn btn-outline-primary btn-sm p-2 ml-2"
+            style={{ width: "40%" }}
+          >
+            <ReactFileReader handleFiles={handleFiles} fileTypes={".csv"}>
+              <span className="h6">Upload as CSV</span>
+            </ReactFileReader>
+          </button>
         </div>
       </div>
     );

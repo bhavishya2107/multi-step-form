@@ -27,7 +27,7 @@ const ImageUploadStep = (props) => {
                   type="checkbox"
                   class="form-check-input"
                   onChange={() => onToggleImagePreview(file.src)}
-                  checked={imagePreview == file.src ? true : false}
+                  checked={imagePreview === file.src ? true : false}
                 />
                 {file.name}
               </label>
@@ -37,27 +37,24 @@ const ImageUploadStep = (props) => {
       );
     });
   return (
-    <div>
-      <Dropzone onDrop={onDrop} accept="image/*" multiple={true}>
+    <div className="jumbotron mt-5">
+      <Dropzone onDrop={onDrop} accept="image/*">
         {({ getRootProps, getInputProps }) => (
           <section className="container">
             <div {...getRootProps({ className: "dropzone" })}>
               <input {...getInputProps()} />
-              <p>Drag 'n' drop some files here, or click to select files</p>
+              <p>Drag 'n' drop file here, or click to select file</p>
             </div>
             <aside>
               <h4>Files</h4>
               <div className="row mb-5">{files}</div>
-              <div className="container">
-                <img />
-              </div>
             </aside>
           </section>
         )}
       </Dropzone>
       {imagePreview !== "" && (
         <div className="container mb-5">
-          <img src={imagePreview} class="img-fluid" alt="Responsive image" />
+          <img src={imagePreview} class="img-fluid" alt={imagePreview} />
         </div>
       )}
 
