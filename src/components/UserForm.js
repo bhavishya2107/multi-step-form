@@ -10,6 +10,7 @@ const steps = [
   { title: "Step - 2" },
   { title: "Step - 3" },
 ];
+
 class UserForm extends Component {
   state = {
     step: 1,

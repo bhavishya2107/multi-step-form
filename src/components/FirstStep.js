@@ -14,14 +14,14 @@ class FirstStep extends Component {
         <div className="mt-5 text-center">
           <button
             type="button"
-            className="btn btn-outline-primary"
+            className="btn btn-outline-primary p-2"
             style={{ width: "40%" }}
             onClick={this.continue}
           >
             <span className="h6">Start from scratch</span>
           </button>
           <button
-            className="btn btn-outline-primary btn-sm p-2 ml-2"
+            className="btn btn-outline-primary p-2 ml-2"
             style={{ width: "40%" }}
           >
             <ReactFileReader handleFiles={handleFiles} fileTypes={".csv"}>

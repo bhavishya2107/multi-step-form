@@ -1,68 +1,49 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Installation Instruction
 
-In the project directory, you can run:
+### To install all the dependencies
+```
+npm install
+```
+### To run the form
+```
+ npm start
+```
 
-### `npm start`
+## Description
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> This app is built on React.<br>
+> Each and every step of the form is divided into components.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Validation 
 
-### `npm test`
+```
+  | Fields      |                      BusinessRules                    |
+  |-------------|-------------------------------------------------------|
+  | Address     |  Mandatory                                            |
+  | Bedroom     |  Mandatory, Numeric field, Maximum char limit is 10   |
+  | Bathroom    |  Mandatory, Numeric field, Maximum char limit is 5    |
+  | Description |  Optional                                             |
+```
+## Modules Installed
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  * bootstrap 4.5.0,
+  * node-sass:4.14.1,
+  * react: 16.13.1,
+  * react-dom: 16.13.1,
+  * react-dropzone: 11.0.2,
+  * react-file-reader: 1.1.4,
+  * react-js-stepper: 1.2.6,
+  * react-scripts: 3.4.1
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  * User can upload the data with a csv file or manually enter it from scratch.
+  * User can add images by drag n drop or by clicking the image upload section.
+  * User can select a preview image and submit it on success.
+  * All the data entered by the user will be displayed in the success component with base64 images consoled.
+  * The form is fully responsive for tablet, mobile and pc view.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Demo
+![App](https://github.com/bhavishya2107/multi-step-form/blob/master/form.gif?raw=true)

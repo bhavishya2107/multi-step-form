@@ -9,11 +9,7 @@ const Success = ({ values }) => {
           <h3>Your data</h3>
           {imagePreview !== "" && (
             <div className="container mb-5 mt-5">
-              <img
-                src={imagePreview}
-                class="img-fluid"
-                alt={imagePreview}
-              />
+              <img src={imagePreview} class="img-fluid" alt={imagePreview} />
             </div>
           )}
           <ul>
